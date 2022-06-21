@@ -12,16 +12,16 @@
 <br />
 <p align="center">
   <a href="https://github.com/EsraOzdogan/ReCapProject-Frontend">
-    <img src="https://user-images.githubusercontent.com/53148314/110218503-2f2ef700-7ecb-11eb-9753-6f760c72511e.png" alt="Rent A Car Project">
+    <!-- <img src="https://user-images.githubusercontent.com/53148314/110218503-2f2ef700-7ecb-11eb-9753-6f760c72511e.png" alt="Rent A Car Project"> -->
   </a>
-  <h2 align="center">ReCapProject-Frontend</h2>
+  <h2 align="center">Rent A Car Project-Frontend</h2>
   <p align="center">
-    Frontend of <a href="https://github.com/EsraOzdogan/ReCapProject">ReCapProject</a> with Angular.
+    <!-- Frontend of <a href="https://github.com/EsraOzdogan/ReCapProject">ReCapProject</a> with Angular. -->
     <br />
     <br />
-    <a href="https://github.com/EsraOzdogan/ReCapProject-Frontend/issues">Report Bug</a>
+    <a href="https://github.com/EsraOzdogan/rentACar/issues">Report Bug</a>
     ·
-    <a href="https://github.com/EsraOzdogan/ReCapProject-Frontend/issues">Request Feature</a>
+    <a href="https://github.com/EsraOzdogan/rentACar/issues">Request Feature</a>
   </p>
 </p>
 
