@@ -2,6 +2,30 @@
 
 # RentACar
 
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+<br />
+<p align="center">
+  <a href="https://github.com/EsraOzdogan/ReCapProject-Frontend">
+    <img src="https://user-images.githubusercontent.com/53148314/110218503-2f2ef700-7ecb-11eb-9753-6f760c72511e.png" alt="Rent A Car Project">
+  </a>
+  <h2 align="center">ReCapProject-Frontend</h2>
+  <p align="center">
+    Frontend of <a href="https://github.com/EsraOzdogan/ReCapProject">ReCapProject</a> with Angular.
+    <br />
+    <br />
+    <a href="https://github.com/EsraOzdogan/ReCapProject-Frontend/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/EsraOzdogan/ReCapProject-Frontend/issues">Request Feature</a>
+  </p>
+</p>
+
+
 ## Built With
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
