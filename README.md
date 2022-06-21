@@ -2,6 +2,17 @@
 
 # RentACar
 
+## Built With
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![NgRx](https://img.shields.io/badge/NgRx-DD0031?style=for-the-badge&logo=NPM&logoColor=white)](https://ngrx.io/)
+[![Css](https://img.shields.io/badge/Css-CC6699?style=for-the-badge&logo=css&logoColor=white)](https://www.w3schools.com/css/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/docs/)
+[![AngularBootstrap](https://img.shields.io/badge/AngularBootstrap-563D7C?style=for-the-badge&logo=angularbootstrap&logoColor=white)](https://ng-bootstrap.github.io)
+[![FontAwesome](https://img.shields.io/badge/fontawesome-563D7C?style=for-the-badge&logo=fontawesome&logoColor=white)](https://fontawesome.com/)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
 ## Development server
@@ -29,10 +40,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-## Built With
-
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
-[![NgRx](https://img.shields.io/badge/NgRx-DD0031?style=for-the-badge&logo=NPM&logoColor=white)](https://ngrx.io/)
-[![Scss](https://img.shields.io/badge/Scss-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/docs/)
