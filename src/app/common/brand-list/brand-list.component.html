@@ -1,0 +1,46 @@
+<div style="padding: 25px; background-color:rgba(65, 133, 110, 0.5);">
+    <div class="d-flex align-content-center my-3">
+        <span class="display-6 fw-bold d-flex">Brand</span>
+        <button type="button" class="btn btn-secondary" style="float:right;" routerLink="/add-brand"><i class="fa-solid fa-plus" ></i></button>
+    </div>
+
+    <div class="list-group" *ngFor="let brand of brands">
+        <a class="list-group-item list-group-item-action d-flex justify-content-center" routerLink="/brands/{{brand.id}}">
+            <div>
+                <img src="{{brand.image}}" class="card-img-left" alt="photo" width="15%" height="75%">
+                <span style="margin-left: 10px;">{{brand.name}}</span>
+            </div>
+            <!-- <div class="d-flex">
+                <span><i class="fa-solid fa-pen-to-square" (onClick)="onEditBrand(brand.id)" ></i></span>
+                <span style="margin-left: 30px;"><i class="fa-solid fa-trash"></i></span>
+            </div> -->
+        </a>
+    </div>
+</div>
+
+
+<div id="brand-filter">
+    <div class="d-flex align-content-center my-3">
+        <span class="display-6 fw-bold d-flex align-items-center">Brand</span>
+        <div class="form-floating ms-3">
+            <input type="text" class="form-control border-0" id="search-brand-input" placeholder="Brand Name" [(ngModel)]="brandFilterText" />
+            <label for="search-brand-input" class="text-muted"><i class="fas fa-search"></i> Search</label
+        >
+      </div>
+    </div>
+
+    <select
+      class="form-select"
+      size="5"
+      [(ngModel)]="activeBrandName"
+      [compareWith]="isBrandSelected"
+    >
+      <option value="">All</option>
+      <option
+        *ngFor="let brand of brands | filterBrand: brandFilterText"
+        value="{{ brand.name }}"
+      >
+        {{ brand.name }}
+      </option>
+    </select>
+  </div>

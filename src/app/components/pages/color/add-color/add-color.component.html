@@ -1,0 +1,14 @@
+<form [formGroup]="colorAddForm" (ngSubmit)="add()">
+
+    <div class="form-group mb-3">
+        <label for="input" class="form-label" required>Renk İsmi</label>
+        <input type="text" id="name" formControlName="name" class="form-control">
+        <div class="alert alert-danger" *ngIf="colorAddForm.get('name').hasError('required') && colorAddForm.get('name').dirty">Lütfen Renk giriniz!</div>
+    </div>
+    <div class="form-group mb-3">
+        <label for="input" class="form-label" required>Marka Logosu</label>
+        <input type="text" id="image" formControlName="image" class="form-control">
+        <div class="alert alert-danger" *ngIf="colorAddForm.get('image').hasError('required') && colorAddForm.get('image').dirty">Lütfen Marka Logosu ekleyiniz!</div>
+    </div>
+    <button type="submit" class="btn btn-secondary mb-3" [disabled]="colorAddForm.invalid">Ekle</button>
+</form>

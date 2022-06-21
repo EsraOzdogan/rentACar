@@ -1,0 +1,17 @@
+<div style="padding: 25px; background-color:rgba(65, 133, 110, 0.5);">
+    <button type="button" class="btn btn-secondary" style="margin-bottom: 10px;" routerLink="/add-color"><i class="fa-solid fa-plus" ></i></button>
+
+    <div class="list-group" *ngFor="let color of colors">
+        <a class="list-group-item list-group-item-action d-flex justify-content-center" routerLink="/colors/{{color.id}}">
+            <div>
+                <img src="{{color.image}}" class="card-img-left" alt="photo" width="15%" height="75%">
+                <span style="margin-left: 10px;">{{color.name}}</span>
+            </div>
+            <!-- <div class="d-flex">
+                <span><i class="fa-solid fa-pen-to-square" (onClick)="onEditColor(color.id)" ></i></span>
+                <span style="margin-left: 30px;"><i class="fa-solid fa-trash"></i></span>
+            </div> -->
+        </a>
+
+    </div>
+</div>

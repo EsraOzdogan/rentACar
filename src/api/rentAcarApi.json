@@ -1,0 +1,284 @@
+{
+    "brands": [{
+            "id": 1,
+            "name": "BMW",
+            "image": "../assets/logos/bmw.png"
+        },
+        {
+            "id": 2,
+            "name": "Audi",
+            "image": "../assets/logos/audi.png"
+        },
+        {
+            "id": 3,
+            "name": "Honda",
+            "image": "../assets/logos/honda.png"
+        },
+        {
+            "id": 4,
+            "name": "Bugatti",
+            "image": "../assets/logos/bugatti.png"
+        },
+        {
+            "id": 5,
+            "name": "Dacia",
+            "image": "../assets/logos/dacia.png"
+        },
+        {
+            "id": 6,
+            "name": "Ford",
+            "image": "../assets/logos/ford.png"
+        },
+        {
+            "id": 7,
+            "name": "Hyundai",
+            "image": "../assets/logos/hyundai.png"
+        },
+        {
+            "id": 8,
+            "name": "Mercedes-Benz",
+            "image": "../assets/logos/mercedes-Benz.png"
+        },
+        {
+            "id": 9,
+            "name": "Renault",
+            "image": "../assets/logos/renault.png"
+        },
+        {
+            "id": 10,
+            "name": "Maserati",
+            "image": "../assets/logos/maserati.png"
+        },
+        {
+            "name": "test",
+            "image": "../assets/logos/maserati.png",
+            "id": 11
+        }
+    ],
+    "colors": [{
+            "id": 1,
+            "name": "Kırmızı",
+            "image": "../assets/colors/red.png"
+        },
+        {
+            "id": 2,
+            "name": "Siyah",
+            "image": "../assets/colors/black.png"
+        },
+        {
+            "id": 3,
+            "name": "Gri",
+            "image": "../assets/colors/grey.png"
+        },
+        {
+            "id": 5,
+            "name": "Beyaz",
+            "image": "../assets/colors/white.png"
+        },
+        {
+            "id": 6,
+            "name": "Lacivert",
+            "image": "../assets/colors/navy-blue.png"
+        },
+        {
+            "name": "a",
+            "id": 7
+        },
+        {
+            "name": "a",
+            "id": 8
+        },
+        {
+            "name": "a",
+            "id": 9
+        }
+    ],
+    "cars": [{
+            "id": 1,
+            "brandId": 1,
+            "colorId": 1,
+            "brandName": "BMW",
+            "colorName": "Kırmızı",
+            "dailyPrice": 400,
+            "image": "../assets/logos/bmw-x6-kirmizi.jpg",
+            "description": "BMW x6"
+        },
+        {
+            "id": 2,
+            "brandId": 1,
+            "colorId": 2,
+            "brandName": "BMW",
+            "colorName": "Siyah",
+            "dailyPrice": 400,
+            "image": "../assets/logos/bmw-x3-siyah.jpg",
+            "description": "BMW x3"
+        },
+        {
+            "id": 5,
+            "dailyPrice": "550",
+            "description": "test2",
+            "image": "../assets/logos/maserati.png",
+            "brandId": "1",
+            "colorId": "6",
+            "brandName": "Bugatti",
+            "colorName": "Mavi"
+        },
+        {
+            "id": 6,
+            "dailyPrice": "55555555",
+            "description": "test",
+            "image": "../assets/logos/maserati.png",
+            "brandId": "3",
+            "colorId": "6",
+            "brandName": "Dacia",
+            "colorName": "Kırmızı"
+        },
+        {
+            "id": 10,
+            "dailyPrice": "888888",
+            "description": "test22222",
+            "image": "../assets/logos/maserati.png",
+            "brandId": "5",
+            "colorId": "1",
+            "brandName": "Honda",
+            "colorName": "Gri"
+        }
+    ],
+    "additionalServices": [{
+            "id": 1,
+            "name": "Adrese Teslim",
+            "price": 109,
+            "description": "Seçilen ofisin, 15 km'lik ilçe sınırları içerisinde, belirttiğiniz adrese, çalışma saatleri içerisinde araç teslim edilir. Aynı gün içerisindeki rezervasyonlarda, araç teslim hizmetinizin kesin onayı, ilgili ofis tarafından aranarak verilecektir."
+        },
+        {
+            "id": 2,
+            "name": "Adresten İade",
+            "price": 109,
+            "description": "Seçilen ofisin, 15 km'lik ilçe sınırları içerisinde, belirttiğiniz adresten, çalışma saatleri içerisinde araç iade alınır. Havalimanı ofislerimizde ''Adresten İade'' saat aralığı 09:00-18:00 dir."
+        },
+        {
+            "id": 3,
+            "name": "Ek Sürücü",
+            "price": 29,
+            "description": "Aracı kullanacak her sürücü sözleşmede olmalıdır. Aksi taktirde sigorta ve sözleşme koşulları geçersiz kalır."
+        },
+        {
+            "id": 4,
+            "name": "GPS",
+            "price": 0,
+            "description": "Trafikte daha az zaman harcayarak, yönünüzü bulmak için navigasyon cihazı kiralayabilirsiniz. GPS hizmeti için garanti verilmeyip ofisimizde uygunluk olması durumunda hizmet sağlanabilmektedir. Uygunluk olması halinde ofiste yapılacak ücretlendirme 1 adet için günlük 59 TL dir."
+        },
+        {
+            "id": 5,
+            "name": "Çocuk Koltuğu",
+            "price": 59,
+            "description": "Belirli bir yaş ve kilo altındaki bebeklerin ve çocukların araç içerisinde yolculukları sırasında bebek/çocuk oto koltuğu kullanılması zorunludur."
+        },
+        {
+            "id": 6,
+            "name": "Güvence Paketi",
+            "price": 45,
+            "description": "Rezervasyonunuzun alış saatinden önce talep edildiği taktirde, ücret kesintisi olmadan iptal edilmesine olanak sağlar. Ayrıca aracı rezervasyon bitiş tarihinden önce iade ederseniz, yeniden hesaplanan kiralama ücreti sonrasındaki fazla tahsilat tarafınıza iade edilecektir."
+        }
+    ],
+    "rentals": [{
+        "id": 1,
+        "carId": 1,
+        "additionals": []
+    }],
+    "users": [{
+            "id": 1,
+            "fisrtname": "Esra",
+            "lastName": "Özdoğan",
+            "email": "esraozdogan@gmail.com",
+            "password": "esra123"
+        },
+        {
+            "id": 2,
+            "fisrtname": "Mustafa",
+            "lastName": "Öztürk",
+            "email": "mustafaozturk@gmail.com",
+            "password": "mustafa123"
+        }
+    ],
+    "cities": [{
+            "id": 1,
+            "name": "Adana"
+        },
+        {
+            "id": 2,
+            "name": "Adıyaman"
+        },
+        {
+            "id": 3,
+            "name": "Afyonkarahisar"
+        },
+        {
+            "id": 5,
+            "name": "Ağrı"
+        },
+        {
+            "id": 6,
+            "name": "Aksaray"
+        },
+        {
+            "id": 7,
+            "name": "Amasya"
+        },
+        {
+            "id": 8,
+            "name": "Ankara"
+        },
+        {
+            "id": 9,
+            "name": "Antalya"
+        },
+        {
+            "id": 10,
+            "name": "Ardahan"
+        },
+        {
+            "id": 11,
+            "name": "Artvin"
+        },
+        {
+            "id": 12,
+            "name": "Aydın"
+        },
+        {
+            "id": 13,
+            "name": "Balıkesir"
+        },
+        {
+            "id": 14,
+            "name": "Bartın"
+        },
+        {
+            "id": 15,
+            "name": "Batman"
+        },
+        {
+            "id": 16,
+            "name": "Bayburt"
+        }, {
+            "id": 17,
+            "name": "Bilecik"
+        },
+        {
+            "id": 18,
+            "name": "Bingöl"
+        },
+        {
+            "id": 19,
+            "name": "Bitlis"
+        },
+        {
+            "id": 20,
+            "name": "Bolu"
+        },
+        {
+            "id": 21,
+            "name": "Burdur"
+        }
+    ]
+}

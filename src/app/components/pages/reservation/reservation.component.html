@@ -1,0 +1,121 @@
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12">
+            <h3>Check Reservation And Complete It</h3>
+            <!-- <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for you.</p> -->
+            <div class="card">
+                <h5 class="text-center mb-4">Personel Informations</h5>
+                <form class="form-card" [formGroup]="reservationForm" (ngSubmit)="makeReservation()" onsubmit="event.preventDefault()">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label class="form-control-label px-3">First name<span class="text-danger"> *</span></label>
+                            <input class="form-control" type="text" id="firstName" formControlName="firstName" placeholder="Enter your first name" onblur="validate(1)">
+                            <div class="alert alert-danger" *ngIf="reservationForm.get('firstName').hasError('required') && reservationForm.get('firstName').dirty">Lütfen İsminizi giriniz!
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label>
+                            <input class="form-control" type="text" id="lastName" formControlName="lastName" placeholder="Enter your last name" onblur="validate(2)">
+                            <div class="alert alert-danger" *ngIf="reservationForm.get('lastName').hasError('required') && reservationForm.get('lastName').dirty">Lütfen Soyadınızı giriniz!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label>
+                            <input class="form-control" type="email" id="email" formControlName="email" placeholder="name@example.com" onblur="validate(3)">
+                            <div class="alert alert-danger" *ngIf="reservationForm.get('email').hasError('required') && reservationForm.get('email').dirty">Lütfen Mailinizi giriniz!
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label>
+                            <input class="form-control" type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="" onblur="validate(4)">
+                            <div class="alert alert-danger" *ngIf="reservationForm.get('phoneNumber').hasError('required') && reservationForm.get('phoneNumber').dirty">Lütfen Telefonunuzu giriniz!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex">
+                            <label class="form-control-label px-3">Şehir<span class="text-danger"> *</span></label>
+                            <select class="form-control py-2 rounded" validateStatus="cityId" required name="cityId" id="cityId">
+                                <option *ngFor="let city of cities" [value]="city.id" >{{city.name}}</option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="reservationForm.get('cityId').hasError('required') && reservationForm.get('cityId').touched">
+                                Şehir gereklidir
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex">
+                            <label class="form-control-label px-3">Address<span class="text-danger"> *</span></label>
+                            <textarea class="form-control" id="address" formControlName="address" placeholder="" required onblur="validate(5)"></textarea>
+
+                            <!-- <input class="form-control" type="email" id="email" formControlName="email" placeholder="name@example.com" onblur="validate(3)"> -->
+                            <div class="alert alert-danger" *ngIf="reservationForm.get('address').hasError('required') && reservationForm.get('address').dirty">Lütfen Adresinizi giriniz!
+                            </div>
+                        </div>
+                        <!-- <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label>
+                            <input class="form-control" type="text" id="phoneNumber" formControlName="phoneNumber" placeholder="" onblur="validate(4)">
+                            <div class="alert alert-danger" *ngIf="reservationForm.get('phoneNumber').hasError('required') && reservationForm.get('phoneNumber').dirty">Lütfen Telefonunuzu giriniz!
+                            </div>
+                        </div> -->
+                    </div>
+
+
+                    <div class="row ">
+                        <!-- <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-secondary" [disabled]="reservationForm.invalid">Request a demo</button> </div> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12">
+            <!-- <h3>Check Reservation And Complete It</h3> -->
+            <!-- <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for you.</p> -->
+            <div class="card">
+                <h5 class="text-center mb-4">Billing Informations</h5>
+                <form class="form-card" [formGroup]="reservationForm" (ngSubmit)="makeReservation()" onsubmit="event.preventDefault()">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <label class="form-control-label px-3">First name<span class="text-danger"> *</span></label>
+                            <input class="form-control" type="text" id="firstName" formControlName="firstName" placeholder="Enter your first name" onblur="validate(1)">
+                            <div class="alert alert-danger" *ngIf="reservationForm.get('firstName').hasError('required') && reservationForm.get('firstName').dirty">Lütfen İsminizi giriniz!
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label>
+                            <input class="form-control" type="text" id="lastName" formControlName="lastName" placeholder="Enter your last name" onblur="validate(2)">
+                            <div class="alert alert-danger" *ngIf="reservationForm.get('lastName').hasError('required') && reservationForm.get('lastName').dirty">Lütfen Soyadınızı giriniz!
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex">
+                            <label class="form-control-label px-3">Address<span class="text-danger"> *</span></label>
+                            <textarea class="form-control" id="address2" formControlName="address2" placeholder="" required onblur="validate(5)"></textarea>
+
+                            <div class="alert alert-danger" *ngIf="reservationForm.get('address2').hasError('required') && reservationForm.get('address2').dirty">Lütfen Adresinizi giriniz!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-secondary" [disabled]="reservationForm.invalid">Devam Et</button> </div>
+                    </div>
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

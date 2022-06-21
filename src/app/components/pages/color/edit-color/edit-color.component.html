@@ -1,0 +1,26 @@
+<h3>Ürün Güncelle</h3>
+<form [formGroup]="colorEditForm" (ngSubmit)="edit()">
+    <div class="form-group mb-3">
+        <label for="input" class="form-label" required>Renk İsmi</label>
+        <input type="text" id="name" formControlName="name" class="form-control" [(ngModel)]="color.name">
+        <div class="alert alert-danger" *ngIf="colorEditForm.get('name').hasError('required') && colorEditForm.get('name').dirty">Lütfen Renk İsmi giriniz!</div>
+    </div>
+    <div class="form-group mb-3">
+        <label for="input" class="form-label" required>Renk Görseli</label>
+        <input type="text" id="image" formControlName="image" class="form-control" [(ngModel)]="color.image">
+        <div class="alert alert-danger" *ngIf="colorEditForm.get('image').hasError('required') && colorEditForm.get('image').dirty">Lütfen Renk Görseli ekleyiniz!</div>
+    </div>
+    <button type="submit" class="btn btn-secondary mb-3" [disabled]="colorEditForm.invalid">Güncelle</button>
+</form>
+
+<!-- <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <img src="..." class="rounded me-2" alt="...">
+        <strong class="me-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        Hello, world! This is a toast message.
+    </div>
+</div> -->

@@ -1,0 +1,36 @@
+<!-- <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown button
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+</div> -->
+<div class="row">
+    <div>
+        <div ngbDropdown class="d-inline-block col">
+            <button type="button" class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle>sepet</button>
+            <ul ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    99+
+                    <span class="visually-hidden">unread messages</span>
+                </span> -->
+
+                <li ngbDropdownItem [value]="item.car.description" *ngFor="let item of cartItems">{{item.car.description}}
+                    <!-- <span class="badge bg-secondary">{{item.quantity}}</span> -->
+                    <div *ngFor="let item2 of cartItems2">
+                        <span class="badge bg-secondary">{{item2.additionalServices.name}}</span>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div *ngFor="let item of cartItems2" class="col">
+    <span class="bg-secondary" style="color:white;">{{item.additionalServices.price}}</span>
+</div>

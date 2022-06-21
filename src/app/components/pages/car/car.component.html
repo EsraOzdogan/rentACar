@@ -1,0 +1,77 @@
+<div *ngIf="dataLoaded==false" class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<div aria-label="Basic example" class="row">
+    <div class="mb-3 col-10">
+        <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Search">
+    </div>
+    <div *ngIf="filterText.length>2" class="alert alert-secondary col-10">
+        {{filterText}} aradınız.
+    </div>
+    <button type="button" class="btn btn-secondary col-2 ml-3" style="float: right;" routerLink="/add-car">Araba Ekle</button>
+</div>
+
+<table *ngIf="dataLoaded==true" class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Image</th>
+            <th scope="col">Brand Name</th>
+            <th scope="col">Color Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">DailyPrice</th>
+            <th [width]="25"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of cars | filterCar : filterText">
+            <th scope="row">{{car.id}}</th>
+            <td>
+                <img src="{{car.image}}" alt="photo" width="25%" height="25%">
+            </td>
+            <td>{{car.brandName}}</td>
+            <td>{{car.colorName}}</td>
+            <td>{{car.description}}</td>
+            <td>{{car.dailyPrice}}</td>
+            <td>
+                <!-- <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-secondary" routerLink="/edit-car/{{car.id}}">Düzenle</button>
+                    <button type="button" class="btn btn-secondary" style="margin-left: 30px;" (click)="onDeleteCar(car.id)">Sil</button>
+                    <button type="button" class="btn btn-secondary" style="margin-left: 30px;" (click)="addToCart(car)" routerLink="rent-car/{{car.id}}">Sepete Ekle</button>
+                </div> -->
+
+                <div ngbDropdown class="d-inline-block col">
+                    <button type="button" class="btn btn-outline-secondary" id="dropdownEditDelete" ngbDropdownToggle></button>
+                    <ul ngbDropdownMenu aria-labelledby="dropdownEditDelete">
+                        <li ngbDropdownItem>
+                            <a routerLink="/edit-car/{{car.id}}" class="dropdown-item">Düzenle</a>
+                        </li>
+                        <li ngbDropdownItem>
+                            <!-- <a (click)="onDeleteCar(car.id)" class="dropdown-item">Sil</a> -->
+                            <!-- <a type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Sil
+                              </a> -->
+
+                            <a class="dropdown-item" (click)="openSm(content,car.id)">Sil</a>
+
+
+                        </li>
+
+                        <li ngbDropdownItem>
+                            <a (click)="addToCart(car)" routerLink="/rent-car/{{car.id}}" class="dropdown-item">Sepete Ekle</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title"> Are you sure you will delete it? </h4> <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button> </div>
+    <div class="modal-footer"> <button type="button" class="btn btn-outline-success" (click)="onDeleteCar(carId)">       Yes     </button> <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')">       No     </button> </div>
+</ng-template>

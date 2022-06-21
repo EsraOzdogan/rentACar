@@ -1,0 +1,64 @@
+<div *ngIf="dataLoaded==false" class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<div aria-label="Basic example" class="row">
+    <div class="mb-3 col-10">
+        <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Search">
+    </div>
+    <div *ngIf="filterText.length>2" class="alert alert-secondary col-10">
+        {{filterText}} aradınız.
+    </div>
+    <button type="button" class="btn btn-secondary col-2 " style="float: right;" routerLink="/add-color">Renk Ekle</button>
+</div>
+
+<table *ngIf="dataLoaded==true" class="table table-striped">
+    <thead class="card-header">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col" [height]="25">Image</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let color of colors">
+            <th scope="row">{{color.id}}</th>
+            <td>{{color.name }}</td>
+            <td>
+                <img src="{{color.image}}" alt="photo" width="5%" height="5%">
+            </td>
+            <td>
+                <!-- <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-secondary" routerLink="/edit-color/{{color.id}}">Düzenle</button>
+                    <button type="button" class="btn btn-secondary" style="margin-left: 30px;" (click)="onDeleteColor(color.id)">Sil</button>
+                </div> -->
+
+                <div ngbDropdown class="d-inline-block col">
+                    <button type="button" class="btn btn-outline-secondary" id="dropdownEditDelete" ngbDropdownToggle></button>
+                    <ul ngbDropdownMenu aria-labelledby="dropdownEditDelete">
+                        <li ngbDropdownItem>
+                            <a routerLink="/edit-color/{{color.id}}" class="dropdown-item">Edit</a>
+                        </li>
+                        <li ngbDropdownItem>
+                            <!-- <a (click)="onDeleteColor(color.id)" class="dropdown-item">Delete</a> -->
+
+                            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-body">
+                                    Hello, world! This is a toast message.
+                                    <div class="mt-2 pt-2 border-top">
+                                        <button type="button" class="btn btn-primary btn-sm">Take action</button>
+                                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

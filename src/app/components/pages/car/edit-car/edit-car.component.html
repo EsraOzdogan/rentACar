@@ -1,0 +1,52 @@
+<h3>Araba Güncelle</h3>
+<form [formGroup]="carEditForm" (ngSubmit)="edit()">
+    <div class="form-group mb-3">
+        <label for="input" class="form-label" required>Daily Price</label>
+        <input type="input" id="dailyPrice" formControlName="dailyPrice" class="form-control" [(ngModel)]="car.dailyPrice">
+        <div class="alert alert-danger" *ngIf="carEditForm.get('dailyPrice').hasError('required') && carEditForm.get('dailyPrice').dirty">Lütfen Daily Price giriniz!
+        </div>
+    </div>
+    <div class="form-group mb-3">
+        <label for="input" class="form-label" required>Image</label>
+        <input type="text" id="image" formControlName="image" class="form-control" [(ngModel)]="car.image">
+        <div class="alert alert-danger" *ngIf="carEditForm.get('image').hasError('required') && carEditForm.get('image').dirty">Lütfen Marka Logosu ekleyiniz!
+        </div>
+    </div>
+    <!-- <select class="form-select form-select-sm" aria-label=".form-select-sm example" *ngFor="let color of colors">
+        <option >{{color.name}}</option>
+      </select>
+
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example" *ngFor="let brand of brands">
+        <option >{{brand.name}}</option>
+      </select> -->
+    <div class="form-group mb-3">
+        <label for="input" class="form-label" required>Marka</label>
+        <select type="number" class="form-control" required name="brandId" id="brandId" formControlName="brandId" [(ngModel)]="car.brandId">
+      <option *ngFor="let brand of brands" [value]="brand.id">
+        {{brand.name}}
+      </option>
+    </select>
+        <div class="alert alert-danger" *ngIf="carEditForm.get('brandId').hasError('required') && carEditForm.get('brandId').touched">
+            Marka gereklidir
+        </div>
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="input" class="form-label" required>Renk</label>
+        <select type="number" class="form-control" required name="colorId" id="colorId" formControlName="colorId" [(ngModel)]="car.colorId">
+      <option *ngFor="let color of colors" [value]="color.id">
+        {{color.name}}
+      </option>
+    </select>
+        <div class="alert alert-danger" *ngIf="carEditForm.get('colorId').hasError('required') && carEditForm.get('colorId').touched">
+            Renk gereklidir
+        </div>
+    </div>
+    <div class="form-group mb-3">
+        <label for="input" class="form-label" required>Açıklama</label>
+        <input type="text" id="description" formControlName="description" class="form-control" [(ngModel)]="car.description">
+        <div class="alert alert-danger" *ngIf="carEditForm.get('description').hasError('required') && carEditForm.get('description').dirty">Lütfen Açıklama giriniz!
+        </div>
+    </div>
+    <button type="submit" class="btn btn-secondary mb-3" [disabled]="carEditForm.invalid">Ekle</button>
+</form>
