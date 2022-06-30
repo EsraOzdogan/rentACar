@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClient, HttpClientModule, HttpClientJsonpModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
 import {ToastrModule} from "ngx-toastr";
-
+import { CommonModule } from '@angular/common';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 //Components
 import { AppComponent } from './app.component';
@@ -34,7 +37,14 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { CarCardComponent } from './components/car-card/car-card.component';
 import { ReservationComponent } from './components/pages/reservation/reservation.component';
+import { ContactComponent } from './components/pages/contact/contact.component';
+import { GoogleMapComponent } from './components/pages/contact/google-map/google-map.component';
 
+
+// Factory function required during AOT compilation
+export function httpTranslateLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +71,9 @@ import { ReservationComponent } from './components/pages/reservation/reservation
     LoginComponent,
     RegisterComponent,
     CarCardComponent,
-    ReservationComponent
+    ReservationComponent,
+    ContactComponent,
+    GoogleMapComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +84,18 @@ import { ReservationComponent } from './components/pages/reservation/reservation
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
     }),
-    NgbModule
+    NgbModule,
+    CommonModule,
+    GoogleMapsModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

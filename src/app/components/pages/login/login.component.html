@@ -1,14 +1,14 @@
 <form [formGroup]="loginForm" (ngSubmit)="login()">
     <!-- <h3 class="col-12 text-center">Giriş yap</h3> -->
 
-    <h1 class="h3 mb-3 fw-normal">Giriş yap</h1>
+    <h1 class="h3 mb-3 fw-normal">{{ 'login' | translate}}</h1>
     <div class="form-group mb-3">
-        <label for="input" class="form-label" required>Email</label>
+        <label for="input" class="form-label" required>{{ 'email' | translate}}</label>
         <input type="email" id="email" formControlName="email" class="form-control" placeholder="name@example.com">
-        <div class="alert alert-danger" *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').dirty">Lütfen Mail Adresinizi giriniz!</div>
+        <div class="alert alert-danger" *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').dirty">Lütfen Mail Emailiniz giriniz!</div>
     </div>
     <div class="form-group mb-3">
-        <label for="input" class="form-label" required>Parola</label>
+        <label for="input" class="form-label" required>{{ 'password' | translate}}</label>
         <input type="password" id="password" formControlName="password" class="form-control">
         <div class="alert alert-danger" *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').dirty">Lütfen Parolanızı giriniz!</div>
     </div>
@@ -16,16 +16,16 @@
 
     <div class="checkbox mb-3">
         <label>
-          <input type="checkbox" value="remember-me" /> Remember me
+          <input type="checkbox" value="remember-me"/>{{ 'rememberMe' | translate}}
         </label>
     </div>
 
 
-    <button type="submit" class="btn btn-secondary mb-3" [disabled]="loginForm.invalid">Log in</button>
+    <button type="submit" class="btn btn-secondary mb-3" [disabled]="loginForm.invalid">{{ 'login' | translate}}</button>
 
     <div class="d-flex mt-2">
-        <p class="my-auto text-secondary me-2">If you are not signed up yet</p>
-        <a routerLink="/register" class="btn btn-outline-success rounded-3">Sign up now</a
+        <p class="my-auto text-secondary me-2">{{ 'signedUpYet' | translate}}</p>
+        <a routerLink="/register" class="btn btn-outline-success rounded-3">{{ 'signUpNow' | translate}}</a
         >
       </div>
 </form>

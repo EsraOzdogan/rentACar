@@ -10,7 +10,7 @@ import { User } from '../models/user';
 })
 export class AuthService {
 
-  apiUrl = 'https://localhost:3000';
+  apiUrl = 'http://localhost:3000';
   constructor(private httpClient:HttpClient) { }
 
   // login(loginModel:LoginModel){
@@ -27,12 +27,12 @@ export class AuthService {
 
   login(user:User):Observable<User>{
     //let newPath = this.apiUrl + "/users?email="
-    return this.httpClient.get<User>(`http://localhost:3000/users?email=${user.email}&&password=${user.password}`)
+    return this.httpClient.get<User>(this.apiUrl+`/users?email=${user.email}&&password=${user.password}`)
   }
 
   register(registerModel: User): Observable<User> {
-    //let newPath = this.apiUrl + "/users"
-    return this.httpClient.post<User>( "https://localhost:3000/users", registerModel);
+    let newPath = this.apiUrl + "/users"
+    return this.httpClient.post<User>(newPath, registerModel);
   }
 
   isAuthenticated(){

@@ -31,6 +31,28 @@
             </ul>
             <app-cart-summary style="margin-right:40px;"></app-cart-summary>
 
+            <select #selLang (change)="translateLanguageTo(selLang.value)" style="background-color: rgba(179, 204, 196, 0.5); width:3%; height:15%; border-color:rgba(102, 114, 110, 0.5); border-radius:5px; color:rgba(35, 37, 37, 0.5);">
+                <option style="background-color: white;" *ngFor="let language of translate.getLangs()" [value]="language" >{{ language }}</option>
+              </select>
+
+
+
+            <!-- <div ngbDropdown class="d-inline-block col">
+                <button #selLang type="button" class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle>Language</button>
+                <ul  ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                   
+
+                    <li ngbDropdownItem  [value]="language" *ngFor="let language of translate.getLangs()" (change)="translateLanguageTo(selLang.value)">{{language}}
+                       
+
+
+                    </li>
+                </ul>
+            </div> -->
+
+
+
+
             <div class="d-flex justify-content-center order-0 order-lg-1">
                 <a class="btn mx-2 py-2 px-4 rounded-1 bg-transparent" routerLink="register">Sign Up</a
               >

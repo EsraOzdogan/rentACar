@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormControl, Validators, FormBuilder  } from "@angular/forms";
+import {UntypedFormGroup,FormControl, Validators, UntypedFormBuilder  } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
@@ -12,11 +12,11 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   user:User
-  loginForm:FormGroup;
+  loginForm:UntypedFormGroup;
 
   unSaved: boolean = true;        
 
-  constructor(private formBuilder:FormBuilder,
+  constructor(private formBuilder:UntypedFormBuilder,
      private authService:AuthService, private toastrService:ToastrService) { }
 
 
